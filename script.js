@@ -1,5 +1,3 @@
-const x = ;
-
 // Khởi tạo Supabase client
 const { createClient } = supabase;
 const client = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
