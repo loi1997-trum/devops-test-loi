@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --paper: #ede6d8;
+  --card: #fbf8f1;
+  --ink: #232a3d;
+  --ink-soft: #4d5468;
+  --muted: #8a8272;
+  --red: #b5402f;
+  --line: #ded5c2;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 460px;
+  background: var(--card);
+  border-radius: 3px;
+  box-shadow: 0 24px 48px rgba(35, 42, 61, 0.14);
+  overflow: hidden;
+}
+
+.margin-rule {
+  width: 10px;
+  background: var(--red);
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  padding: 40px 36px 32px;
+}
+
+.kicker {
+  font-size: 13px;
+  color: var(--red);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+
+h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+#todo-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+#task-input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 14px;
+  background: #fff;
+  color: var(--ink);
+}
+
+#task-input::placeholder {
+  color: var(--muted);
+}
+
+#task-input:focus {
+  outline: none;
+  border-color: var(--red);
+}
+
+button[type="submit"] {
+  background: var(--ink);
+  color: #fff;
+  border: none;
+  padding: 0 20px;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+button[type="submit"]:hover {
+  background: var(--red);
+}
+
+#todo-list {
+  list-style: none;
+}
+
+#todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 2px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14.5px;
+}
+
+#todo-list li:first-child {
+  border-top: 1px solid var(--line);
+}
+
+#todo-list li span {
+  flex: 1;
+  cursor: pointer;
+  color: var(--ink-soft);
+}
+
+#todo-list li span::before {
+  content: "○";
+  display: inline-block;
+  width: 18px;
+  color: var(--muted);
+}
+
+#todo-list li.done span {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--red);
+}
+
+#todo-list li.done span::before {
+  content: "✓";
+  color: var(--red);
+}
+
+#todo-list li button.delete {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 15px;
+  padding: 4px 6px;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.15s ease;
+}
+
+#todo-list li button.delete:hover {
+  color: var(--red);
+}
+
+.status {
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+}
