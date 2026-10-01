@@ -33,6 +33,8 @@ pipeline {
             steps {
                 sh 'echo "Static site - validating files..."'
                 sh 'test -f index.html && echo "index.html found"'
+                sh 'node --check script.js && echo "script.js syntax OK"'
+                sh 'node --check config.js && echo "config.js syntax OK"'
             }
         }
         stage('Deploy') {
