@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        VERCEL_TOKEN = credentials('vercel-token')
-        TELEGRAM_BOT_TOKEN = credentials('telegram-bot-token')
-        TELEGRAM_CHAT_ID = credentials('telegram-chat-id')
+        VERCEL_TOKEN = credentials('VERCEL_TOKEN')
+        TELEGRAM_BOT_TOKEN = credentials('TELEGRAM_TOKEN')
+        TELEGRAM_CHAT_ID = credentials('TELEGRAM_CHAT_ID')
         PROJECT_NAME = 'devops-test'
         BRANCH_NAME = 'main'
     }
